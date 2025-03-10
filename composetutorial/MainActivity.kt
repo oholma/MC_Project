@@ -69,7 +69,7 @@ fun MessageCard(msg: Message, userViewModel: UserViewModel) {
     val user by userViewModel.user.observeAsState()
 
     Row(verticalAlignment = Alignment.CenterVertically) {
-        //val selectedImageUri = user?.selectedImageUri
+        
         val selectedImageUri = msg.profileImageUri ?: user?.selectedImageUri
         if (selectedImageUri?.isNotEmpty() == true) {
             Image(
@@ -138,8 +138,8 @@ fun MessageCard(msg: Message, userViewModel: UserViewModel) {
 
 fun getDrawableResourceId(imageName: String): Int {
     return when (imageName) {
-        "second_profilepicture" -> R.drawable.second_profilepicture // Oikea nimi
-        else -> R.drawable.profile_picture // Oletuskuva
+        "second_profilepicture" -> R.drawable.second_profilepicture
+        else -> R.drawable.profile_picture
     }
 }
 
